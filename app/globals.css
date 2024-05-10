@@ -17,17 +17,23 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  scrollbar-width: thin; /* Firefox */
+  overscroll-behavior: none;
+}
+/* For Chrome, Safari, and newer versions of Opera */
+::-webkit-scrollbar {
+  width: 15px; /* Adjust width as needed */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: lightgray; /* Color of the draggable part */
+  border-radius: 4px; /* Optional: Add if you want rounded corners */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b0b0b0; /* Slightly darker shade when hovered */
+}
+/* For Firefox */
+* {
+  scrollbar-color: lightgray transparent; /* thumb and track */
 }
